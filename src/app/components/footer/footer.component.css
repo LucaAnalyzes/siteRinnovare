@@ -1,0 +1,103 @@
+footer{
+    position: relative;
+    bottom: 0;
+    left: 0;
+    width: 100%; /* Ocupa toda a largura da tela */
+   
+    text-align: center;
+    
+    z-index: 100; /* Certifica-se de que o rodapé esteja acima de outros elementos */
+  }
+
+.footerContainer{
+    background-color: rgba(44, 33, 27, 1);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    height: 100px;
+    
+    a {
+        color: inherit; /* Herda a cor do elemento pai */
+        text-decoration: none; /* Remove o sublinhado */
+      }
+    .imgNav{
+        height: 100%;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-left: 10px;
+        font-size: 18px;
+        justify-self: center;
+        
+        
+        .navFooter{
+            height: 100%;
+            padding-left: 50px;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            
+            .pageFooter{
+                color:rgba(243, 240, 235, 1);
+            }
+            .pageFooter:hover{
+                color:rgb(85, 83, 80);
+                cursor: pointer;
+            }
+        }
+    }
+
+   .contact{
+
+    margin-top: 7px;
+    font-size: 0.99rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: rgba(243, 240, 235, 1);
+    
+    p{
+       
+        padding-top:2px;
+        text-align: center
+    }
+   } 
+
+   .social{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    img{
+        margin-left: 20px;
+    }
+   }
+
+   .direitos{
+    margin-top: 4px;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 0.6rem;
+   }
+}
+
+
+
+p{
+    color:rgba(243, 240, 235, 1);
+}
+
+
+
+.imgNav a::before {
+    content: '. ';
+    color:rgba(243, 240, 235, 1);
+    text-align: center;
+    font-size: 1.rem;
+}

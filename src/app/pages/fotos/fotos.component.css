@@ -1,0 +1,105 @@
+/* Bloqueia rolagem do body quando o modal está aberto */
+body.modal-open {
+  overflow: hidden;
+  height: 100%;
+}
+
+/* Modal de imagem e vídeo */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.modal.open {
+  opacity: 1;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  background-color: transparent;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.img-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  max-width: 100%; /* Ajusta o tamanho da imagem */
+  max-height: 100%; /* Ajusta a altura da imagem */
+  overflow: hidden;
+}
+
+.modal-img {
+  width: calc(80vw * 1.3); /* Torna a largura 20% maior */
+  height: calc(80vh * 1.3); /* Torna a altura 20% maior */
+  max-width: 100vw; /* Impede que ultrapasse a largura total da tela */
+  max-height: 100vh; /* Impede que ultrapasse a altura total da tela */
+  object-fit: contain;
+  pointer-events: none;
+}
+
+
+.modal-video {
+  max-width: 90%;
+  max-height: 90%;
+  border: none;
+}
+
+/* Botão de fechar no modal */
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: #fff;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+}
+
+/* Galeria com rolagem horizontal */
+.row {
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  overflow-x: hidden;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
+}
+
+.row img {
+  width: 100%;           /* Imagem ocupará 100% da largura disponível */
+  height: 300px;         /* Defina uma altura fixa para as imagens */
+  object-fit: cover;     /* A imagem irá cobrir a área sem distorcer */
+  border-radius: 5px;    /* Bordas arredondadas nas imagens */
+}
+
+/* Modal de vídeo */
+.modal-video {
+  max-width: 100%;  /* Define a largura máxima como 90% da tela */
+  max-height: 95vh; /* Define a altura máxima como 80% da altura da tela */
+  width: auto;     /* Ajusta a largura automaticamente para manter a proporção */
+  height: auto;    /* Ajusta a altura automaticamente para manter a proporção */
+  border: none;
+  object-fit: contain; /* Garante que o vídeo se ajuste sem cortar ou distorcer */
+}

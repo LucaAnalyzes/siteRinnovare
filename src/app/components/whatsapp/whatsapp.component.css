@@ -1,0 +1,13 @@
+.whats{
+    
+    position: fixed;
+    bottom: 20vh;
+    right: 2vw;
+    z-index: 9999;
+    
+}
+
+img {
+    max-width: 100vw;
+    max-height: 100vh;
+}

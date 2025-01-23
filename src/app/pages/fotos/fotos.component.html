@@ -1,0 +1,64 @@
+<app-navbar></app-navbar>
+<app-whatsapp></app-whatsapp>
+
+<div class="container my-5">
+  <h2 class="mb-4">Galeria</h2>
+  
+  <!-- Galeria de Fotos -->
+  <h4>Fotos</h4>
+  <div class="d-flex position-relative align-items-center">
+    <!-- Botão de Navegação Esquerda para Imagens -->
+    <button class="btn btn-light position-absolute start-0 z-index-1" (click)="scrollGallery('left', 'image')">
+      <span>&lt;</span>
+    </button>
+    
+    <!-- Galeria de Imagens com Scroll Horizontal -->
+    <div #imageGalleryRow class="row flex-nowrap overflow-auto mx-5">
+      <div class="col-4 col-md-3" *ngFor="let image of images" (click)="openModal('image', image)">
+        <img [src]="image" class="img-fluid rounded" alt="Galeria de fotos">
+      </div>
+    </div>
+    
+    <!-- Botão de Navegação Direita para Imagens -->
+    <button class="btn btn-light position-absolute end-0 z-index-1" (click)="scrollGallery('right', 'image')">
+      <span>&gt;</span>
+    </button>
+  </div>
+
+  <!-- Galeria de Vídeos -->
+  <h4 class="mt-4">Vídeos</h4>
+  <div class="d-flex position-relative align-items-center">
+    <!-- Botão de Navegação Esquerda para Vídeos -->
+    <button class="btn btn-light position-absolute start-0 z-index-1" (click)="scrollGallery('left', 'video')">
+      <span>&lt;</span>
+    </button>
+    
+    <!-- Galeria de Vídeos com Scroll Horizontal -->
+    <div #videoGalleryRow class="row flex-nowrap overflow-auto mx-5">
+      <div class="col-4 col-md-3" *ngFor="let video of videos" (click)="openModal('video', video)">
+        <video [src]="video" class="img-fluid rounded" controls></video>
+      </div>
+    </div>
+    
+    <!-- Botão de Navegação Direita para Vídeos -->
+    <button class="btn btn-light position-absolute end-0 z-index-1" (click)="scrollGallery('right', 'video')">
+      <span>&gt;</span>
+    </button>
+  </div>
+</div>
+
+<app-footer></app-footer>
+
+<!-- Modal -->
+<div class="modal" *ngIf="isModalOpen" [ngClass]="{'open': isModalOpen}" (click)="closeModal($event)">
+  <div class="modal-content">
+    <ng-container *ngIf="modalType === 'image'">
+      <div class="img-container">
+        <img [src]="modalContent" class="modal-img" alt="Imagem em tela cheia">
+      </div>
+    </ng-container>
+    <ng-container *ngIf="modalType === 'video'">
+      <video [src]="modalContent" class="modal-video" controls autoplay></video>
+    </ng-container>
+  </div>
+</div>

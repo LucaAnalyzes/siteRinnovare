@@ -1,0 +1,32 @@
+.main{
+    background-color: rgba(243, 240, 235, 1);
+    display: flex;
+    flex-direction: row;
+}
+
+.carousel{
+    
+    width: 145vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Centraliza horizontalmente */
+    
+}
+
+.carousel-control-prev-icon, .carousel-control-next-icon {
+    background-color: black; /* Remover o fundo */
+}
+
+.carousel-inner{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+
+.infos{
+    width: 30%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}

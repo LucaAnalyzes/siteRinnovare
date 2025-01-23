@@ -1,0 +1,49 @@
+*{
+    background-color: rgb(244, 240, 235);
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    max-height: 200px;
+    z-index: 10;
+    
+}
+
+.logo{
+    width: 11vh;
+    object-fit: contain; /* Faz com que a imagem se ajuste no contêiner sem cortar */
+    background-color: transparent; 
+    margin-left: 10vh;
+    max-width: 20vh;
+    max-height: 20vh;
+    
+}
+.container-fluid{
+    border-bottom: 0.4vh solid rgba(76, 65, 61, 1); ;
+    height: 10vh;  
+    
+}
+
+
+
+.navbar-collapse{
+    justify-content: right;
+    margin-right: 10vh;
+    
+    
+}
+.nav-link{
+    color: rgba(44, 33, 27, 1);
+    padding: 2vh;
+
+}
+
+.nav-link:hover{
+    color: rgb(0, 0, 0);
+}
+
+.navbar-nav a::before {
+    content: "- ";
+    color: rgba(44, 33, 27, 1);
+    margin-right: 0.1vw;
+    font-size: 1.5rem;
+}
